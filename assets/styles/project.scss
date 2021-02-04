@@ -38,7 +38,7 @@
   opacity: 0;
   position: absolute;
   cursor: pointer;
-  padding: 0px 50px 80px 50px;
+  padding: 0px 15px 80px 15px;
   color: white;
   &:hover{
     opacity: 0.8;
@@ -70,8 +70,6 @@
   position: absolute;
   width: 91%;
   padding-top: 265px;
-  padding-left: 0;
-  padding-right: 58px;
   text-decoration: none;
   color: white;
   &:hover{

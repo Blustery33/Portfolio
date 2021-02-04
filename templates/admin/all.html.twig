@@ -1,0 +1,12 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block body %}
+    <ul>
+        {% for project in projects %}
+            <li>
+                <a style="margin-right: 50px;" href="{{ path('admin_update_project', {'id': project.id}) }}">Editer : {{ project.name }}</a>
+                <a onclick="return confirm('Really?');" href="{{ path('admin_project_delete', {'id': project.id}) }}">SUPPRIMER</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

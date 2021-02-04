@@ -1,8 +1,8 @@
 <div class="grid-item {{ project.category.identifier }}">
     <div class="project-description display-center-column">
-        {{ project.description }}
+        <div>{{ project.description }}</div>
+        <div style="padding-top: 5px">Technologies utilisées :</div>
         <ul>
-            Technologies utilisées :
         {% for technology in project.technology %}
             <li>{{ technology.name }}</li>
         {% endfor %}
