@@ -17,12 +17,13 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
                               Réalisation d\'un site fictif & statique pour un service de bar/restauration
                               Utilisation HTML 5, CSS 3 et JavaScript.
                               Création de la page d\'accueil, formulaires et d\'une galerie photo.',
-            'poster' => 'guinguette.png',
+            'poster' => 'https://zupimages.net/up/21/05/xzhr.png',
             'technology' =>
             [
                 'Html',
                 'Css',
             ],
+            'url' => ' ',
         ],
         [
             'category' => 'projet-client',
@@ -31,7 +32,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
                               Utilisation d\'une architecture MVC, manipulation et création d\'une base de données, gestion des sessions.
                               Création de formulaires, barre de recherche, fiches d\'antisèches en Markdown
                               Utilisation de Bootstrap pour la mise en page.',
-            'poster' => 'dumbz.png',
+            'poster' => 'https://zupimages.net/up/21/05/34wu.png',
             'technology' =>
             [
                 'Php',
@@ -39,6 +40,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
                 'Css',
                 'Mysql'
             ],
+            'url' => 'http://dumbz.vladsol.ovh/',
         ],
         [
             'category' => 'projet-client',
@@ -49,7 +51,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
                             - Utilisation du framework Symfony, Doctrine, Bootstrap & Node.js.
                             - Réalisation des wireframes grâce à Figma.
                             - Organisation de l\'équipe suivant la méthodologie Agile & utilisation de Github Projects.',
-            'poster' => 'authentic.png',
+            'poster' => 'https://zupimages.net/up/21/05/m5kz.png',
             'technology' =>
             [
                 'Symfony',
@@ -58,6 +60,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
                 'Css',
                 'Mysql',
             ],
+            'url' => 'https://authentic-trip.fr/',
         ],
     ];
     public function load(ObjectManager $manager)
@@ -71,7 +74,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             foreach ($projectData['technology'] as $technology){
                 $project->addTechnology($this->getReference($technology));
             }
-
+            $project->setUrl($projectData['url']);
             $manager->persist($project);
         }
         $manager->flush();

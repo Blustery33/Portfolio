@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes projects{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>MES PROJETS</h1>
+            </div>
+            <div class="title-project col-12">
+                <ul class="list-group list-group-horizontal-sm project-filters">
+                    <li class="list-group-item active" data-filter="*">Tous</li>
+                    {% for category in categories %}
+                        <li class="list-group-item" data-filter=".{{ category.identifier }}"> {{ category.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-12">
+                <div class="grid">
+                    {% for project in projects %}
+                        {% include 'project/_project.html.twig' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

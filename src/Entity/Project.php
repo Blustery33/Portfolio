@@ -43,7 +43,7 @@ class Project
     private $updated_at;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $poster;
 
@@ -56,6 +56,11 @@ class Project
      * @ORM\ManyToMany(targetEntity=Technology::class, inversedBy="projects")
      */
     private $technology;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $url;
 
     public function __construct()
     {
@@ -135,6 +140,18 @@ class Project
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(?string $url): self
+    {
+        $this->url = $url;
 
         return $this;
     }
