@@ -35,7 +35,7 @@ class Technology
     private $icon;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Project::class, mappedBy="technology")
+     * @ORM\ManyToMany(targetEntity=Project::class, mappedBy="technologies")
      */
     private $projects;
 

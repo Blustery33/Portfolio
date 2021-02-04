@@ -1,0 +1,18 @@
+<div class="grid-item {{ project.category.identifier }}">
+    <div class="project-description display-center-column">
+        <div>{{ project.description }}</div>
+        <div style="padding-top: 5px">Technologies utilisées :</div>
+        <ul>
+        {% for technology in project.technology %}
+            <li>{{ technology.name }}</li>
+        {% endfor %}
+        </ul>
+        <a class="project-url display-center" href="{{ project.url }}" target="_blank">Voir le projet</a>
+    </div>
+    <div class="project-title display-center">
+        {{ project.name }}
+    </div>
+    <img class="poster" src="{{ project.poster }}" alt="">
+</div>
+
+
